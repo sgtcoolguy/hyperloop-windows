@@ -1,4 +1,4 @@
-# Hyperloop for Windows ∞ [![Build Status](https://travis-ci.org/appcelerator/hyperloop-windows.svg)](https://travis-ci.org/appcelerator/hyperloop-windows) [Hyperloop Windows](https://github.com/appcelerator/hyperloop-windows)
+# Hyperloop for Windows ∞ [![Build Status](https://travis-ci.org/appcelerator/hyperloop-windows.svg)](https://travis-ci.org/appcelerator/hyperloop-windows)
 
 Hyperloop is a next-generation compiler that converts JavaScript source code into native code for targeting different native OS platforms. 
 
