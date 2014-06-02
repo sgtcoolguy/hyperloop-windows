@@ -1,4 +1,15 @@
 "use hyperloop"
 
-var str = new Platform.String("hello");
-console.log(str);
+var window = Windows.UI.Xaml.Window.Current;
+/*
+var text = new TextBlock();
+
+text.Text = "Hello, world!";
+text.TextAlignment = TextAlignment.Center;
+text.VerticalAlignment = VerticalAlignment.Center;
+text.HorizontalAlignment = HorizontalAlignment.Center;
+text.FontSize = 60;
+
+window.Content = text;
+*/
+window.Activate();
