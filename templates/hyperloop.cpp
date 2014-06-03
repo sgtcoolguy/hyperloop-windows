@@ -11,37 +11,37 @@
  */
 
 template <>
-void Hyperloop::NativeObject<IInspectable*>::release()
+void Hyperloop::NativeObject<Platform::Object^>::release()
 {
 
 }
 
 template <>
-void Hyperloop::NativeObject<IInspectable*>::retain()
+void Hyperloop::NativeObject<Platform::Object^>::retain()
 {
 
 }
 
 template<>
-bool Hyperloop::NativeObject<IInspectable*>::hasInstance(JSContextRef ctx, JSValueRef other, JSValueRef* exception)
+bool Hyperloop::NativeObject<Platform::Object^>::hasInstance(JSContextRef ctx, JSValueRef other, JSValueRef* exception)
 {
 	return false;
 }
 
 template<>
-std::string Hyperloop::NativeObject<IInspectable*>::toString(JSContextRef ctx, JSValueRef* exception)
+std::string Hyperloop::NativeObject<Platform::Object^>::toString(JSContextRef ctx, JSValueRef* exception)
 {
 	return nullptr;
 }
 
 template<>
-double Hyperloop::NativeObject<IInspectable*>::toNumber(JSContextRef ctx, JSValueRef* exception)
+double Hyperloop::NativeObject<Platform::Object^>::toNumber(JSContextRef ctx, JSValueRef* exception)
 {
 	return NAN;
 }
 
 template<>
-bool Hyperloop::NativeObject<IInspectable*>::toBoolean(JSContextRef ctx, JSValueRef* exception)
+bool Hyperloop::NativeObject<Platform::Object^>::toBoolean(JSContextRef ctx, JSValueRef* exception)
 {
 	return false;
 }
