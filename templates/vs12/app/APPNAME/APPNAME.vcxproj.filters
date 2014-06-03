@@ -11,6 +11,12 @@ $APP_CLCOMPILES$
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="hyperloop.h" />
+    <ClInclude Include="JavaScriptCore\JSBase.h" />
+    <ClInclude Include="JavaScriptCore\JSContextRef.h" />
+    <ClInclude Include="JavaScriptCore\JSObjectRef.h" />
+    <ClInclude Include="JavaScriptCore\JSStringRef.h" />
+    <ClInclude Include="JavaScriptCore\JSValueRef.h" />
+    <ClInclude Include="JavaScriptCore\WebKitAvailability.h" />
 $APP_CLINCLUDES$
   </ItemGroup>
 </Project>

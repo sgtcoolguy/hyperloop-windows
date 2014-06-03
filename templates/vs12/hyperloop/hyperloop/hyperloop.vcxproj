@@ -115,6 +115,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>STATICALLY_LINKED_WITH_WTF=1;STATICALLY_LINKED_WITH_JavaScriptCore;_WINRT_DLL;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,6 +128,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>STATICALLY_LINKED_WITH_WTF=1;STATICALLY_LINKED_WITH_JavaScriptCore;_WINRT_DLL;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,6 +141,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>STATICALLY_LINKED_WITH_WTF=1;STATICALLY_LINKED_WITH_JavaScriptCore;_WINRT_DLL;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,6 +154,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>STATICALLY_LINKED_WITH_WTF=1;STATICALLY_LINKED_WITH_JavaScriptCore;_WINRT_DLL;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -163,6 +167,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>STATICALLY_LINKED_WITH_WTF=1;STATICALLY_LINKED_WITH_JavaScriptCore;_WINRT_DLL;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -175,6 +180,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>STATICALLY_LINKED_WITH_WTF=1;STATICALLY_LINKED_WITH_JavaScriptCore;_WINRT_DLL;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -184,6 +190,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="hyperloop.h" />
+    <ClInclude Include="JavaScriptCore\JSBase.h" />
+    <ClInclude Include="JavaScriptCore\JSContextRef.h" />
+    <ClInclude Include="JavaScriptCore\JSObjectRef.h" />
+    <ClInclude Include="JavaScriptCore\JSStringRef.h" />
+    <ClInclude Include="JavaScriptCore\JSValueRef.h" />
+    <ClInclude Include="JavaScriptCore\WebKitAvailability.h" />
 $HYPERLOOP_CLINCLUDES$
   </ItemGroup>
   <ItemGroup>
