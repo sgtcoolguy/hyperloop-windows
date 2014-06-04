@@ -60,7 +60,7 @@ void HyperloopApp::Boot()
 	{
         JSStringRef str = JSValueToStringCopy(HyperloopGlobalContext(), exception, NULL);
         const size_t len = JSStringGetMaximumUTF8CStringSize(str);
-        const char* buf = new char[len];
+        char* buf = new char[len];
         JSStringGetUTF8CString(str, (char *)&buf, len);
         JSStringRelease(str);
 
