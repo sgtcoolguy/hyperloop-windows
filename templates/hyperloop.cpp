@@ -12,6 +12,7 @@ std::wstring HyperloopWindowsGetWString(JSStringRef sValue) {
 	JSStringGetUTF8CString(sValue, cValue, sLength);
 	std::string s_str = cValue;
 	std::wstring w_str(s_str.begin(), s_str.end());
+	delete[] cValue;
 	return w_str;
 }
 
@@ -50,6 +51,7 @@ Platform::String^ HyperloopWindowsGetPlatformString(JSStringRef sValue) {
 	JSStringGetUTF8CString(sValue, cValue, sLength);
 	std::string s_str = cValue;
 	std::wstring w_str(s_str.begin(), s_str.end());
+	delete[] cValue;
 	return ref new Platform::String(HyperloopWindowsGetWString(sValue).c_str());
 }
 
