@@ -47,7 +47,7 @@ bool Hyperloop::NativeObject<T>::hasInstance(JSContextRef ctx, JSValueRef other,
 template<class T>
 std::string Hyperloop::NativeObject<T>::toString(JSContextRef ctx, JSValueRef* exception)
 {
-	return nullptr;
+	return HyperloopWindowsGetSStr(this->getObject()->ToString());
 }
 
 template<class T>

@@ -46,7 +46,7 @@ module.exports = new Command(
 
 			function findPackagePs1() {
 				var canForce = false;
-				var appPackages = path.join(options.appDir, '..', 'AppPackages');
+				var appPackages = path.join(options.appDir, 'AppPackages');
 				var files = wrench.readdirSyncRecursive(appPackages).filter(function(f) {
 					return f.match(/Add\-AppDevPackage\.ps1$/);
 				});
