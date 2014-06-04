@@ -64,12 +64,12 @@ function generateCerts (options, proceed) {
 
 	var name = options.name,
 		appDir = path.join(options.dest,'vsstudio',name),
-		pvkPath = path.join(appDir, options.name+'_Key.pvk'),
-		pfxPath = options.pfx && path.join(appDir, options.pfx),
+		pvkPath = path.join(appDir, name, options.name+'_Key.pvk'),
+		pfxPath = options.pfx && path.join(appDir, name, options.pfx),
 		homeDir = util.writableHomeDirectory(),
-		cerFile = path.join(appDir, 'Test_Key.cer'),
-		solutionFile = path.join(appDir, '..', name + '.sln'),
-		projectFile = path.join(appDir, name + '.vcxproj'),
+		cerFile = path.join(appDir, name, 'Test_Key.cer'),
+		solutionFile = path.join(appDir, name + '.sln'),
+		projectFile = path.join(appDir, name, name + '.vcxproj'),
 		jscDir = path.join(homeDir, 'JavaScriptCore' + options.sdk),
 		srcDir = appc.fs.resolvePath(options.src);
 
@@ -108,7 +108,7 @@ function generateCerts (options, proceed) {
 		}
 
 		// get potential cert paths
-		pfxPath = path.join(appDir, name+'_Key.pfx');
+		pfxPath = path.join(appDir, name, name+'_Key.pfx');
 		var globalTestPfxPath = path.join(homeDir, 'DevelopmentKey.pfx');
 
 		// do we have a valid test cert in the build folder
@@ -189,10 +189,32 @@ function generateGuid(options) {
 }
 
 function pkg(options, callback) {
-	generateCerts(options, function(solutionFile){
-		generateGuid(options);
-		//TODO: hard coded to win32 for now
-		programs.msbuild(solutionFile+' /p:Platform=Win32', callback, options);
+	var sdkConfig = sdkConfigs[options.sdk],
+		version = sdkConfig.version,
+		checksum = sdkConfig.checksum,
+		url = require('util').format(urlFormat, options.sdk, version),
+		homeDir = util.writableHomeDirectory(),
+		jscLibDir = path.join(homeDir, 'JavaScriptCore'+options.sdk),
+		appDir = path.join(options.dest,'vsstudio',options.name),
+		projectFile = path.join(appDir, options.name, options.name + '.vcxproj');
+
+	log.debug('writing JavaScriptCore into', jscLibDir.cyan);
+
+	util.downloadResourceIfNecessary('JavaScriptCore' + options.sdk, version, url, checksum, homeDir, function(err) {
+		if (err) {
+			log.error('Downloading and extracting JavaScriptCore' + options.sdk + ' failed.');
+			log.fatal(err);
+		}
+
+		log.debug('updating '+projectFile);
+		util.copyAndFilterString(projectFile, projectFile, {'\\$JAVASCRIPTCORE_LIB\\$':path.resolve(jscLibDir)});
+
+		generateCerts(options, function(solutionFile){
+			generateGuid(options);
+			//TODO: hard coded to win32 for now
+			programs.msbuild(solutionFile+' /p:Platform=Win32', callback, options);
+		});
+
 	});
 }
 
