@@ -184,9 +184,9 @@ module.exports = new Command(
 			}
 
 			function runAppX() {
-				var launchinfo = JSON.parse(fs.readFileSync(path.join(options.dest,'launchinfo.json')).toString());
-				options.launchToken = launchinfo.token;
-				options['identity-name'] = launchinfo.identity;
+				var appinfo = JSON.parse(fs.readFileSync(path.join(options.dest,'appinfo.json')).toString());
+				options.launchToken = appinfo.token;
+				options['identity-name'] = appinfo.identity;
 				programs.explorer(options.launchToken+':', function ran(err) {
 					// TODO: Sometimes, it doesn't launch. Or it doesn't focus. Not sure which.
 					log.info(name.green + ' successfully installed and launched: ' + options.launchToken.green + '\n\n');
