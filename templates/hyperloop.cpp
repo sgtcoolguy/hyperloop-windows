@@ -29,6 +29,10 @@ const char* HyperloopWindowsGetCStr(Platform::String^ string) {
 	return std::string(string->Begin(), string->End()).c_str();
 }
 
+/*
+ * return chars from JSValueRef. This allocates new chars
+ * so caller should be responsible for deleting it.
+ */
 const char* HyperloopWindowsGetCStr(JSContextRef ctx, JSValueRef ref) {
 	JSStringRef sValue = JSValueToStringCopy(ctx, ref, NULL);
 	std::wstring w_str = HyperloopWindowsGetWString(sValue);
