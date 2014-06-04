@@ -190,6 +190,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="hyperloop.h" />
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="JavaScriptCore\JSBase.h" />
     <ClInclude Include="JavaScriptCore\JSContextRef.h" />
     <ClInclude Include="JavaScriptCore\JSObjectRef.h" />
@@ -199,6 +200,7 @@
 $HYPERLOOP_CLINCLUDES$
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Logger.cpp" />
 $HYPERLOOP_CLCOMPILES$
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -7,6 +7,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Logger.cpp" />
 $HYPERLOOP_CLCOMPILES$
   </ItemGroup>
   <ItemGroup>
