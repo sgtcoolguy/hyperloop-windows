@@ -16,7 +16,7 @@ std::wstring HyperloopWindowsGetWString(JSStringRef sValue);
 std::wstring HyperloopWindowsGetWString(JSContextRef ctx, JSValueRef ref);
 std::string HyperloopWindowsGetSStr(Platform::String^ string);
 const char* HyperloopWindowsGetCStr(Platform::String^ string);
-const char* HyperloopWindowsGetCStr(JSContextRef ctx, JSValueRef ref);
+char* HyperloopWindowsGetCStr(JSContextRef ctx, JSValueRef ref);
 Platform::String^ HyperloopWindowsGetPlatformString(std::string s_str);
 Platform::String^ HyperloopWindowsGetPlatformString(JSStringRef sValue);
 Platform::String^ HyperloopWindowsGetPlatformString(JSContextRef ctx, JSStringRef ref);
