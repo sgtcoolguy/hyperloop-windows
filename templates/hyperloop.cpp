@@ -12,6 +12,7 @@ std::wstring HyperloopWindowsGetWString(JSStringRef sValue) {
 	JSStringGetUTF8CString(sValue, cValue, sLength);
 	std::string s_str = cValue;
 	std::wstring w_str(s_str.begin(), s_str.end());
+	delete[] cValue;
 	return w_str;
 }
 
@@ -28,7 +29,11 @@ const char* HyperloopWindowsGetCStr(Platform::String^ string) {
 	return std::string(string->Begin(), string->End()).c_str();
 }
 
-const char* HyperloopWindowsGetCStr(JSContextRef ctx, JSValueRef ref) {
+/*
+ * return chars from JSValueRef. This allocates new chars
+ * so caller should be responsible for deleting it.
+ */
+char* HyperloopWindowsGetCStr(JSContextRef ctx, JSValueRef ref) {
 	JSStringRef sValue = JSValueToStringCopy(ctx, ref, NULL);
 	std::wstring w_str = HyperloopWindowsGetWString(sValue);
 	std::string s_str(w_str.begin(), w_str.end());
@@ -50,6 +55,7 @@ Platform::String^ HyperloopWindowsGetPlatformString(JSStringRef sValue) {
 	JSStringGetUTF8CString(sValue, cValue, sLength);
 	std::string s_str = cValue;
 	std::wstring w_str(s_str.begin(), s_str.end());
+	delete[] cValue;
 	return ref new Platform::String(HyperloopWindowsGetWString(sValue).c_str());
 }
 
