@@ -229,7 +229,7 @@ module.exports = new Command(
 							setTimeout(tailLog, 1000);
 						}
 						else {
-							programs.powershell('Get-Content -Path "' + appLog + '" -Wait', callback, {
+							programs.powershell('Get-Content -Path "' + appLog + '" -Wait', done, {
 								stdOut: function(data) {
 									console.log(data.replace(/\r\n$/, ''));
 								}
