@@ -4,11 +4,11 @@ var window = Windows.UI.Xaml.Window.Current;
 var text = new Windows.UI.Xaml.Controls.TextBlock();
 
 text.Text = "Hello, world!";
-/*
-text.TextAlignment = TextAlignment.Center;
-text.VerticalAlignment = VerticalAlignment.Center;
-text.HorizontalAlignment = HorizontalAlignment.Center;
-*/
+
+text.TextAlignment = Windows.UI.Xaml.TextAlignment.Center;
+text.VerticalAlignment = Windows.UI.Xaml.VerticalAlignment.Center;
+text.HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Center;
+
 text.FontSize = 60;
 
 window.Content = text;

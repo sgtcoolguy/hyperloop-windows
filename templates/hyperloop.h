@@ -53,13 +53,13 @@ std::string Hyperloop::NativeObject<T>::toString(JSContextRef ctx, JSValueRef* e
 template<class T>
 double Hyperloop::NativeObject<T>::toNumber(JSContextRef ctx, JSValueRef* exception)
 {
-	return 0;
+	return (double)dynamic_cast<Platform::Object^>(this->getObject());
 }
 
 template<class T>
 bool Hyperloop::NativeObject<T>::toBoolean(JSContextRef ctx, JSValueRef* exception)
 {
-	return false;
+	return (bool)dynamic_cast<Platform::Object^>(this->getObject());
 }
 
 IInspectable* HyperloopWindowsObjectToPointer(Platform::Object^ o);
