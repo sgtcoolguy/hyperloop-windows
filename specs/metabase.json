@@ -1,0 +1,1310 @@
+{
+   "classes": {
+      "Platform.Object": {
+         "methods": {
+            ".ctor": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "rtspecialname",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void",
+                  "name": ".ctor",
+                  "args": []
+               }
+            ],
+            "GetType": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "class Platform.Type",
+                  "name": "GetType",
+                  "args": []
+               }
+            ],
+            "Equals": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "bool",
+                  "name": "Equals",
+                  "args": [
+                     {
+                        "type": "object",
+                        "name": "obj"
+                     }
+                  ]
+               }
+            ],
+            "GetHashCode": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "int32",
+                  "name": "GetHashCode",
+                  "args": []
+               }
+            ],
+            "ToString": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "string",
+                  "name": "ToString",
+                  "args": []
+               }
+            ],
+            "ReferenceEquals": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "static",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "bool",
+                  "name": "ReferenceEquals",
+                  "args": [
+                     {
+                        "type": "object",
+                        "name": "obj1"
+                     },
+                     {
+                        "type": "object",
+                        "name": "obj2"
+                     }
+                  ]
+               },
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "static",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "bool",
+                  "name": "ReferenceEquals",
+                  "args": [
+                     {
+                        "type": "string",
+                        "name": "obj1"
+                     },
+                     {
+                        "type": "string",
+                        "name": "obj2"
+                     }
+                  ]
+               }
+            ]
+         },
+         "attributes": [
+            "private",
+            "auto",
+            "ansi"
+         ],
+         "name": "Platform.Object"
+      },
+      "Platform.Type": {
+         "fields": {
+            "_descriptor": {
+               "attributes": [
+                  "private"
+               ],
+               "type": "void*",
+               "name": "_descriptor"
+            },
+            "_owndescriptor": {
+               "attributes": [
+                  "private"
+               ],
+               "type": "bool",
+               "name": "_owndescriptor"
+            }
+         },
+         "methods": {
+            ".ctor": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "rtspecialname",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void",
+                  "name": ".ctor",
+                  "args": [
+                     {
+                        "type": "valuetype Platform.IntPtr",
+                        "name": "A_0"
+                     }
+                  ]
+               },
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "rtspecialname",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void",
+                  "name": ".ctor",
+                  "args": [
+                     {
+                        "type": "valuetype Windows.UI.Xaml.Interop.TypeName",
+                        "name": "A_0"
+                     }
+                  ]
+               },
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "rtspecialname",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void",
+                  "name": ".ctor",
+                  "args": [
+                     {
+                        "type": "object",
+                        "name": "A_0"
+                     }
+                  ]
+               }
+            ],
+            "Dispose": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "virtual",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void",
+                  "name": "Dispose",
+                  "args": []
+               }
+            ],
+            "get_FullName": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "string",
+                  "name": "get_FullName",
+                  "args": []
+               }
+            ],
+            "GetTypeCode": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "static",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "valuetype Platform.TypeCode",
+                  "name": "GetTypeCode",
+                  "args": [
+                     {
+                        "type": "class Platform.Type",
+                        "name": "type"
+                     }
+                  ]
+               }
+            ],
+            "op_Implicit": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "static",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "valuetype Windows.UI.Xaml.Interop.TypeName",
+                  "name": "op_Implicit",
+                  "args": [
+                     {
+                        "type": "class Platform.Type",
+                        "name": "A_0"
+                     }
+                  ]
+               },
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "static",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "class Platform.Type",
+                  "name": "op_Implicit",
+                  "args": [
+                     {
+                        "type": "valuetype Windows.UI.Xaml.Interop.TypeName",
+                        "name": "A_0"
+                     }
+                  ]
+               }
+            ],
+            "Equals": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "virtual",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "bool marshal( unsigned int8)",
+                  "name": "Equals",
+                  "args": [
+                     {
+                        "type": "object",
+                        "name": "obj"
+                     }
+                  ]
+               }
+            ],
+            "GetHashCode": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "virtual",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "int32",
+                  "name": "GetHashCode",
+                  "args": []
+               }
+            ],
+            "ToString": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "virtual",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "string",
+                  "name": "ToString",
+                  "args": []
+               }
+            ]
+         },
+         "properties": {
+            "FullName": {
+               "getter": {
+                  "type": "instance",
+                  "returnType": "string",
+                  "className": "Platform.Type",
+                  "name": "get_FullName",
+                  "args": []
+               },
+               "type": "instance",
+               "returnType": "string",
+               "name": "FullName"
+            }
+         },
+         "attributes": [
+            "private",
+            "auto",
+            "ansi"
+         ],
+         "name": "Platform.Type",
+         "extends": "Platform.Object",
+         "implements": [
+            "Platform.IDisposable",
+            "Platform.Details.IEquatable",
+            "Platform.Details.IPrintable"
+         ]
+      },
+      "Platform.ValueType": {
+         "methods": {
+            ".ctor": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "rtspecialname",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void",
+                  "name": ".ctor",
+                  "args": []
+               }
+            ],
+            "Equals": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "bool",
+                  "name": "Equals",
+                  "args": [
+                     {
+                        "type": "object",
+                        "name": "obj"
+                     }
+                  ]
+               }
+            ],
+            "GetHashCode": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "int32",
+                  "name": "GetHashCode",
+                  "args": []
+               }
+            ],
+            "ToString": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "string",
+                  "name": "ToString",
+                  "args": []
+               }
+            ]
+         },
+         "attributes": [
+            "private",
+            "abstract",
+            "auto",
+            "ansi"
+         ],
+         "name": "Platform.ValueType",
+         "extends": "Platform.Object"
+      },
+      "Platform.Enum": {
+         "methods": {
+            ".ctor": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "rtspecialname",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void",
+                  "name": ".ctor",
+                  "args": []
+               }
+            ],
+            "Equals": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "bool",
+                  "name": "Equals",
+                  "args": [
+                     {
+                        "type": "object",
+                        "name": "obj"
+                     }
+                  ]
+               }
+            ],
+            "GetHashCode": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "int32",
+                  "name": "GetHashCode",
+                  "args": []
+               }
+            ],
+            "ToString": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "string",
+                  "name": "ToString",
+                  "args": []
+               }
+            ]
+         },
+         "attributes": [
+            "private",
+            "abstract",
+            "auto",
+            "ansi"
+         ],
+         "name": "Platform.Enum",
+         "extends": "Platform.ValueType"
+      },
+      "Platform.TypeCode": {
+         "fields": {
+            "value__": {
+               "attributes": [
+                  "public",
+                  "specialname",
+                  "rtspecialname"
+               ],
+               "type": "int32",
+               "name": "value__"
+            },
+            "Empty": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "Empty",
+               "assignType": "int32",
+               "assignValue": "0x00000000"
+            },
+            "Object": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "Object",
+               "assignType": "int32",
+               "assignValue": "0x00000001"
+            },
+            "Boolean": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "Boolean",
+               "assignType": "int32",
+               "assignValue": "0x00000003"
+            },
+            "Char16": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "Char16",
+               "assignType": "int32",
+               "assignValue": "0x00000004"
+            },
+            "Int8": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "Int8",
+               "assignType": "int32",
+               "assignValue": "0x00000005"
+            },
+            "UInt8": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "UInt8",
+               "assignType": "int32",
+               "assignValue": "0x00000006"
+            },
+            "Int16": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "Int16",
+               "assignType": "int32",
+               "assignValue": "0x00000007"
+            },
+            "UInt16": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "UInt16",
+               "assignType": "int32",
+               "assignValue": "0x00000008"
+            },
+            "Int32": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "Int32",
+               "assignType": "int32",
+               "assignValue": "0x00000009"
+            },
+            "UInt32": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "UInt32",
+               "assignType": "int32",
+               "assignValue": "0x0000000A"
+            },
+            "Int64": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "Int64",
+               "assignType": "int32",
+               "assignValue": "0x0000000B"
+            },
+            "UInt64": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "UInt64",
+               "assignType": "int32",
+               "assignValue": "0x0000000C"
+            },
+            "Single": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "Single",
+               "assignType": "int32",
+               "assignValue": "0x0000000D"
+            },
+            "Double": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "Double",
+               "assignType": "int32",
+               "assignValue": "0x0000000E"
+            },
+            "DateTime": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "DateTime",
+               "assignType": "int32",
+               "assignValue": "0x00000010"
+            },
+            "String": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "String",
+               "assignType": "int32",
+               "assignValue": "0x00000012"
+            },
+            "TimeSpan": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "TimeSpan",
+               "assignType": "int32",
+               "assignValue": "0x00000013"
+            },
+            "Point": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "Point",
+               "assignType": "int32",
+               "assignValue": "0x00000014"
+            },
+            "Size": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "Size",
+               "assignType": "int32",
+               "assignValue": "0x00000015"
+            },
+            "Rect": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "Rect",
+               "assignType": "int32",
+               "assignValue": "0x00000016"
+            },
+            "Guid": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "Guid",
+               "assignType": "int32",
+               "assignValue": "0x00000017"
+            },
+            "Custom": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Platform.TypeCode",
+               "name": "Custom",
+               "assignType": "int32",
+               "assignValue": "0x00000018"
+            }
+         },
+         "attributes": [
+            "public",
+            "auto",
+            "ansi",
+            "sealed"
+         ],
+         "name": "Platform.TypeCode",
+         "extends": "Platform.Enum"
+      },
+      "Platform.String": {
+         "methods": {
+            ".ctor": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "rtspecialname",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void",
+                  "name": ".ctor",
+                  "args": []
+               }
+            ],
+            "modopt": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "rtspecialname",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void .ctor(char",
+                  "name": "modopt",
+                  "args": [
+                     {
+                        "type": "Platform.Runtime.CompilerServices.IsConst)*",
+                        "name": "s"
+                     }
+                  ]
+               },
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "rtspecialname",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void .ctor(char",
+                  "name": "modopt",
+                  "args": [
+                     {
+                        "type": "Platform.Runtime.CompilerServices.IsConst)*",
+                        "name": "s"
+                     },
+                     {
+                        "type": "uint32",
+                        "name": "n"
+                     }
+                  ]
+               }
+            ],
+            "Begin": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "char modopt([mscorlib]Platform.Runtime.CompilerServices.IsConst)*",
+                  "name": "Begin",
+                  "args": []
+               }
+            ],
+            "End": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "char modopt([mscorlib]Platform.Runtime.CompilerServices.IsConst)*",
+                  "name": "End",
+                  "args": []
+               }
+            ],
+            "Data": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "char modopt([mscorlib]Platform.Runtime.CompilerServices.IsConst)*",
+                  "name": "Data",
+                  "args": []
+               }
+            ],
+            "Length": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "uint32",
+                  "name": "Length",
+                  "args": []
+               }
+            ],
+            "Equals": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "bool",
+                  "name": "Equals",
+                  "args": [
+                     {
+                        "type": "class Platform.String",
+                        "name": "str"
+                     }
+                  ]
+               },
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "virtual",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "bool",
+                  "name": "Equals",
+                  "args": [
+                     {
+                        "type": "object",
+                        "name": "obj"
+                     }
+                  ]
+               }
+            ],
+            "IsEmpty": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "bool",
+                  "name": "IsEmpty",
+                  "args": []
+               }
+            ],
+            "IsFastPass": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "bool",
+                  "name": "IsFastPass",
+                  "args": []
+               }
+            ],
+            "CompareOrdinal": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "static",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "int32",
+                  "name": "CompareOrdinal",
+                  "args": [
+                     {
+                        "type": "class Platform.String",
+                        "name": "str1"
+                     },
+                     {
+                        "type": "class Platform.String",
+                        "name": "str2"
+                     }
+                  ]
+               }
+            ],
+            "GetHashCode": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "virtual",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "int32",
+                  "name": "GetHashCode",
+                  "args": []
+               }
+            ],
+            "ToString": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "virtual",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "string",
+                  "name": "ToString",
+                  "args": []
+               }
+            ],
+            "op_Equality": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "static",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "bool",
+                  "name": "op_Equality",
+                  "args": [
+                     {
+                        "type": "string",
+                        "name": "a"
+                     },
+                     {
+                        "type": "string",
+                        "name": "b"
+                     }
+                  ]
+               }
+            ],
+            "op_Inequality": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "static",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "bool",
+                  "name": "op_Inequality",
+                  "args": [
+                     {
+                        "type": "string",
+                        "name": "a"
+                     },
+                     {
+                        "type": "string",
+                        "name": "b"
+                     }
+                  ]
+               }
+            ],
+            "op_LessThan": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "static",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "bool",
+                  "name": "op_LessThan",
+                  "args": [
+                     {
+                        "type": "string",
+                        "name": "a"
+                     },
+                     {
+                        "type": "string",
+                        "name": "b"
+                     }
+                  ]
+               }
+            ],
+            "op_GreaterThan": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "static",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "bool",
+                  "name": "op_GreaterThan",
+                  "args": [
+                     {
+                        "type": "string",
+                        "name": "a"
+                     },
+                     {
+                        "type": "string",
+                        "name": "b"
+                     }
+                  ]
+               }
+            ],
+            "op_LessThanOrEqual": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "static",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "bool",
+                  "name": "op_LessThanOrEqual",
+                  "args": [
+                     {
+                        "type": "string",
+                        "name": "a"
+                     },
+                     {
+                        "type": "string",
+                        "name": "b"
+                     }
+                  ]
+               }
+            ],
+            "op_GreaterThanOrEqual": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "static",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "bool",
+                  "name": "op_GreaterThanOrEqual",
+                  "args": [
+                     {
+                        "type": "string",
+                        "name": "a"
+                     },
+                     {
+                        "type": "string",
+                        "name": "b"
+                     }
+                  ]
+               }
+            ],
+            "Dispose": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "virtual",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void",
+                  "name": "Dispose",
+                  "args": []
+               }
+            ],
+            "Concat": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "static",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "class Platform.String",
+                  "name": "Concat",
+                  "args": [
+                     {
+                        "type": "string",
+                        "name": "str1"
+                     },
+                     {
+                        "type": "string",
+                        "name": "str2"
+                     }
+                  ]
+               },
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "static",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "class Platform.String",
+                  "name": "Concat",
+                  "args": [
+                     {
+                        "type": "object",
+                        "name": "str1"
+                     },
+                     {
+                        "type": "object",
+                        "name": "str2"
+                     }
+                  ]
+               }
+            ]
+         },
+         "attributes": [
+            "private",
+            "auto",
+            "ansi",
+            "sealed"
+         ],
+         "name": "Platform.String",
+         "extends": "Platform.Object",
+         "implements": [
+            "Platform.IDisposable",
+            "Platform.Details.IEquatable",
+            "Platform.Details.IPrintable"
+         ]
+      },
+      "Windows.UI.Xaml.TextAlignment": {
+         "fields": {
+            "value__": {
+               "attributes": [
+                  "private",
+                  "specialname",
+                  "rtspecialname"
+               ],
+               "type": "int32",
+               "name": "value__"
+            },
+            "Center": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Windows.UI.Xaml.TextAlignment",
+               "name": "Center",
+               "assignType": "int32",
+               "assignValue": "0x00000000"
+            },
+            "Left": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Windows.UI.Xaml.TextAlignment",
+               "name": "Left",
+               "assignType": "int32",
+               "assignValue": "0x00000001"
+            },
+            "Right": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Windows.UI.Xaml.TextAlignment",
+               "name": "Right",
+               "assignType": "int32",
+               "assignValue": "0x00000002"
+            },
+            "Justify": {
+               "attributes": [
+                  "public",
+                  "static",
+                  "literal"
+               ],
+               "type": "valuetype Windows.UI.Xaml.TextAlignment",
+               "name": "Justify",
+               "assignType": "int32",
+               "assignValue": "0x00000003"
+            }
+         },
+         "attributes": [
+            "public",
+            "auto",
+            "ansi",
+            "windowsruntime",
+            "sealed"
+         ],
+         "name": "Windows.UI.Xaml.TextAlignment",
+         "extends": "[mscorlib]System.Enum"
+      }
+   }
+}
