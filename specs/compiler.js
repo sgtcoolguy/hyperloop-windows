@@ -90,7 +90,7 @@ describe("Windows compiler", function() {
 		GetType.class.should.be.eql('Platform.Type');
 		GetType.name.should.be.eql('FullName');
 		GetType.metatype.should.be.eql('getter');
-		GetType.returnType.should.be.eql('string');
+		GetType.returnType.should.be.eql('Platform.String');
 
 		done();
 	});
