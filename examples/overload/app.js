@@ -11,8 +11,8 @@ text.HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Center;
 
 text.FontSize = 60;
 
-// window.Equals(text);
- Hyperloop.method(window, 'Equals(object)').call(text);
+// Hyperloop.method(window, 'Equals(object)').call(text);
+Hyperloop.method('Platform.Object', 'ReferenceEquals(object,object)').call(window, text);
 
 window.Content = text;
 window.Activate();
