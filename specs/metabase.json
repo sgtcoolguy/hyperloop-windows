@@ -1305,6 +1305,604 @@
          ],
          "name": "Windows.UI.Xaml.TextAlignment",
          "extends": "[mscorlib]System.Enum"
+      },
+      "Windows.UI.Xaml.Window": {
+         "methods": {
+            "get_Bounds": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "newslot",
+                     "specialname",
+                     "virtual",
+                     "final",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "valuetype Windows.Foundation.Rect",
+                  "name": "get_Bounds",
+                  "args": [],
+                  "overrides": {
+                     "type": "Windows.UI.Xaml.IWindow",
+                     "name": "get_Bounds"
+                  }
+               }
+            ],
+            "get_Visible": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "newslot",
+                     "specialname",
+                     "virtual",
+                     "final",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "bool",
+                  "name": "get_Visible",
+                  "args": [],
+                  "overrides": {
+                     "type": "Windows.UI.Xaml.IWindow",
+                     "name": "get_Visible"
+                  }
+               }
+            ],
+            "get_Content": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "newslot",
+                     "specialname",
+                     "virtual",
+                     "final",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "class Windows.UI.Xaml.UIElement",
+                  "name": "get_Content",
+                  "args": [],
+                  "overrides": {
+                     "type": "Windows.UI.Xaml.IWindow",
+                     "name": "get_Content"
+                  }
+               }
+            ],
+            "put_Content": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "newslot",
+                     "specialname",
+                     "virtual",
+                     "final",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void",
+                  "name": "put_Content",
+                  "args": [
+                     {
+                        "inout": "in",
+                        "type": "class Windows.UI.Xaml.UIElement",
+                        "name": "value"
+                     }
+                  ],
+                  "overrides": {
+                     "type": "Windows.UI.Xaml.IWindow",
+                     "name": "put_Content"
+                  }
+               }
+            ],
+            "get_CoreWindow": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "newslot",
+                     "specialname",
+                     "virtual",
+                     "final",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "class Windows.UI.Core.CoreWindow",
+                  "name": "get_CoreWindow",
+                  "args": [],
+                  "overrides": {
+                     "type": "Windows.UI.Xaml.IWindow",
+                     "name": "get_CoreWindow"
+                  }
+               }
+            ],
+            "get_Dispatcher": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "newslot",
+                     "specialname",
+                     "virtual",
+                     "final",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "class Windows.UI.Core.CoreDispatcher",
+                  "name": "get_Dispatcher",
+                  "args": [],
+                  "overrides": {
+                     "type": "Windows.UI.Xaml.IWindow",
+                     "name": "get_Dispatcher"
+                  }
+               }
+            ],
+            "add_Activated": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "newslot",
+                     "specialname",
+                     "virtual",
+                     "final",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "valuetype Windows.Foundation.EventRegistrationToken",
+                  "name": "add_Activated",
+                  "args": [
+                     {
+                        "inout": "in",
+                        "type": "class Windows.UI.Xaml.WindowActivatedEventHandler",
+                        "name": "value"
+                     }
+                  ],
+                  "overrides": {
+                     "type": "Windows.UI.Xaml.IWindow",
+                     "name": "add_Activated"
+                  }
+               }
+            ],
+            "remove_Activated": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "newslot",
+                     "specialname",
+                     "virtual",
+                     "final",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void",
+                  "name": "remove_Activated",
+                  "args": [
+                     {
+                        "inout": "in",
+                        "type": "valuetype Windows.Foundation.EventRegistrationToken",
+                        "name": "token"
+                     }
+                  ],
+                  "overrides": {
+                     "type": "Windows.UI.Xaml.IWindow",
+                     "name": "remove_Activated"
+                  }
+               }
+            ],
+            "add_Closed": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "newslot",
+                     "specialname",
+                     "virtual",
+                     "final",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "valuetype Windows.Foundation.EventRegistrationToken",
+                  "name": "add_Closed",
+                  "args": [
+                     {
+                        "inout": "in",
+                        "type": "class Windows.UI.Xaml.WindowClosedEventHandler",
+                        "name": "value"
+                     }
+                  ],
+                  "overrides": {
+                     "type": "Windows.UI.Xaml.IWindow",
+                     "name": "add_Closed"
+                  }
+               }
+            ],
+            "remove_Closed": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "newslot",
+                     "specialname",
+                     "virtual",
+                     "final",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void",
+                  "name": "remove_Closed",
+                  "args": [
+                     {
+                        "inout": "in",
+                        "type": "valuetype Windows.Foundation.EventRegistrationToken",
+                        "name": "token"
+                     }
+                  ],
+                  "overrides": {
+                     "type": "Windows.UI.Xaml.IWindow",
+                     "name": "remove_Closed"
+                  }
+               }
+            ],
+            "add_SizeChanged": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "newslot",
+                     "specialname",
+                     "virtual",
+                     "final",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "valuetype Windows.Foundation.EventRegistrationToken",
+                  "name": "add_SizeChanged",
+                  "args": [
+                     {
+                        "inout": "in",
+                        "type": "class Windows.UI.Xaml.WindowSizeChangedEventHandler",
+                        "name": "value"
+                     }
+                  ],
+                  "overrides": {
+                     "type": "Windows.UI.Xaml.IWindow",
+                     "name": "add_SizeChanged"
+                  }
+               }
+            ],
+            "remove_SizeChanged": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "newslot",
+                     "specialname",
+                     "virtual",
+                     "final",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void",
+                  "name": "remove_SizeChanged",
+                  "args": [
+                     {
+                        "inout": "in",
+                        "type": "valuetype Windows.Foundation.EventRegistrationToken",
+                        "name": "token"
+                     }
+                  ],
+                  "overrides": {
+                     "type": "Windows.UI.Xaml.IWindow",
+                     "name": "remove_SizeChanged"
+                  }
+               }
+            ],
+            "add_VisibilityChanged": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "newslot",
+                     "specialname",
+                     "virtual",
+                     "final",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "valuetype Windows.Foundation.EventRegistrationToken",
+                  "name": "add_VisibilityChanged",
+                  "args": [
+                     {
+                        "inout": "in",
+                        "type": "class Windows.UI.Xaml.WindowVisibilityChangedEventHandler",
+                        "name": "value"
+                     }
+                  ],
+                  "overrides": {
+                     "type": "Windows.UI.Xaml.IWindow",
+                     "name": "add_VisibilityChanged"
+                  }
+               }
+            ],
+            "remove_VisibilityChanged": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "newslot",
+                     "specialname",
+                     "virtual",
+                     "final",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void",
+                  "name": "remove_VisibilityChanged",
+                  "args": [
+                     {
+                        "inout": "in",
+                        "type": "valuetype Windows.Foundation.EventRegistrationToken",
+                        "name": "token"
+                     }
+                  ],
+                  "overrides": {
+                     "type": "Windows.UI.Xaml.IWindow",
+                     "name": "remove_VisibilityChanged"
+                  }
+               }
+            ],
+            "Activate": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "newslot",
+                     "virtual",
+                     "final",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void",
+                  "name": "Activate",
+                  "args": [],
+                  "overrides": {
+                     "type": "Windows.UI.Xaml.IWindow",
+                     "name": "Activate"
+                  }
+               }
+            ],
+            "Close": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "newslot",
+                     "virtual",
+                     "final",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void",
+                  "name": "Close",
+                  "args": [],
+                  "overrides": {
+                     "type": "Windows.UI.Xaml.IWindow",
+                     "name": "Close"
+                  }
+               }
+            ],
+            "get_Current": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "static",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "class Windows.UI.Xaml.Window",
+                  "name": "get_Current",
+                  "args": []
+               }
+            ]
+         },
+         "properties": {
+            "Content": {
+               "getter": {
+                  "type": "instance",
+                  "returnType": "class",
+                  "className": "Windows.UI.Xaml.UIElement Windows.UI.Xaml.Window",
+                  "name": "get_Content",
+                  "args": []
+               },
+               "setter": {
+                  "type": "instance",
+                  "returnType": "void",
+                  "className": "Windows.UI.Xaml.Window",
+                  "name": "put_Content",
+                  "args": [
+                     "class Windows.UI.Xaml.UIElement"
+                  ]
+               },
+               "type": "instance",
+               "returnType": "class Windows.UI.Xaml.UIElement",
+               "name": "Content"
+            },
+            "Bounds": {
+               "getter": {
+                  "type": "instance",
+                  "returnType": "valuetype",
+                  "className": "Windows.Foundation.Rect Windows.UI.Xaml.Window",
+                  "name": "get_Bounds",
+                  "args": []
+               },
+               "type": "instance",
+               "returnType": "valuetype Windows.Foundation.Rect",
+               "name": "Bounds"
+            },
+            "CoreWindow": {
+               "getter": {
+                  "type": "instance",
+                  "returnType": "class",
+                  "className": "Windows.UI.Core.CoreWindow Windows.UI.Xaml.Window",
+                  "name": "get_CoreWindow",
+                  "args": []
+               },
+               "type": "instance",
+               "returnType": "class Windows.UI.Core.CoreWindow",
+               "name": "CoreWindow"
+            },
+            "Dispatcher": {
+               "getter": {
+                  "type": "instance",
+                  "returnType": "class",
+                  "className": "Windows.UI.Core.CoreDispatcher Windows.UI.Xaml.Window",
+                  "name": "get_Dispatcher",
+                  "args": []
+               },
+               "type": "instance",
+               "returnType": "class Windows.UI.Core.CoreDispatcher",
+               "name": "Dispatcher"
+            },
+            "Visible": {
+               "getter": {
+                  "type": "instance",
+                  "returnType": "bool",
+                  "className": "Windows.UI.Xaml.Window",
+                  "name": "get_Visible",
+                  "args": []
+               },
+               "type": "instance",
+               "returnType": "bool",
+               "name": "Visible"
+            },
+            "Current": {
+               "getter": {
+                  "type": "class",
+                  "returnType": "",
+                  "className": "Windows.UI.Xaml.Window Windows.UI.Xaml.Window",
+                  "name": "get_Current",
+                  "args": []
+               },
+               "type": "class",
+               "returnType": "Windows.UI.Xaml.Window",
+               "name": "Current"
+            }
+         },
+         "attributes": [
+            "public",
+            "auto",
+            "ansi",
+            "windowsruntime",
+            "sealed"
+         ],
+         "name": "Windows.UI.Xaml.Window",
+         "extends": "[mscorlib]System.Object",
+         "implements": [
+            "Windows.UI.Xaml.IWindow"
+         ]
+      },
+      "Platform.Metadata.DefaultMemberAttribute": {
+         "methods": {
+            ".ctor": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "specialname",
+                     "rtspecialname",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "void",
+                  "name": ".ctor",
+                  "args": [
+                     {
+                        "type": "string",
+                        "name": "A_0"
+                     }
+                  ]
+               }
+            ],
+            "Equals": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "bool",
+                  "name": "Equals",
+                  "args": [
+                     {
+                        "type": "object",
+                        "name": "obj"
+                     }
+                  ]
+               }
+            ],
+            "GetHashCode": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "int32",
+                  "name": "GetHashCode",
+                  "args": []
+               }
+            ],
+            "ToString": [
+               {
+                  "attributes": [
+                     "public",
+                     "hidebysig",
+                     "instance",
+                     "runtime",
+                     "managed"
+                  ],
+                  "returnType": "string",
+                  "name": "ToString",
+                  "args": []
+               }
+            ]
+         },
+         "attributes": [
+            "private",
+            "auto",
+            "ansi",
+            "sealed"
+         ],
+         "name": "Platform.Metadata.DefaultMemberAttribute",
+         "extends": "Platform.Metadata.Attribute"
       }
    }
 }
