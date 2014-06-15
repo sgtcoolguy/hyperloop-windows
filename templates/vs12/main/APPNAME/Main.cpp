@@ -59,9 +59,9 @@ void HyperloopApp::Boot()
 	if (exception!=nullptr)
 	{
         JSStringRef str = JSValueToStringCopy(HyperloopGlobalContext(), exception, NULL);
-        const size_t len = JSStringGetMaximumUTF8CStringSize(str);
+        const size_t len = JSStringGetLength(str);
         char* buf = new char[len];
-        JSStringGetUTF8CString(str, (char *)&buf, len);
+        JSStringGetUTF8CString(str, (char *)buf, len);
         JSStringRelease(str);
 
         Logger::log(HyperloopWindowsGetPlatformString(buf));
