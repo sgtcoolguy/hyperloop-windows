@@ -197,6 +197,62 @@ describe("Windows Compiler front-end", function() {
 		done();
 	});
 
+	it("should transform instance property", function(done) {
+		var arch = 'x86',
+			build_opts = {DEBUG:true,OBFUSCATE:false},
+			state = {};
+		source = '"use hyperloop"\nvar t = new Platform.Type(0);\nvar name = t.FullName';
+
+		should.exist(winMetabase);
+
+		state.metabase = winMetabase;
+		state.libfile = 'blah';
+		state.symbols = {};
+		state.obfuscate = false;
+		compiler.compile({platform:arch}, state, windows_compiler, arch, source, 'filename', 'filename.js', build_opts);
+
+		should.exist(state.symbols);
+		state.symbols.should.be.an.Object;
+		property = _.find(state.symbols, function(value, key) {
+			return value.location.line == 3;
+		});
+		should.exist(property);
+		property.type.should.be.eql('statement');
+		property.symbolname.should.be.eql('Platform_Type_Get_FullName');
+		property.class.should.be.eql('Platform.Type');
+		property.returnType.should.be.eql('Platform.String');
+		should.exist(property.property);
+
+		done();
+	});
+
+	it("should transform method from instance property", function(done) {
+		var arch = 'x86',
+			build_opts = {DEBUG:true,OBFUSCATE:false},
+			state = {};
+		source = '"use hyperloop"\nvar t = new Platform.Type(0);\nvar name = t.FullName\nvar e = name.IsEmpty();';
+		should.exist(winMetabase);
+
+		state.metabase = winMetabase;
+		state.libfile = 'blah';
+		state.symbols = {};
+		state.obfuscate = false;
+		compiler.compile({platform:arch}, state, windows_compiler, arch, source, 'filename', 'filename.js', build_opts);
+
+		should.exist(state.symbols);
+		state.symbols.should.be.an.Object;
+		property = _.find(state.symbols, function(value, key) {
+			return value.location.line == 4;
+		});
+		should.exist(property);
+		property.type.should.be.eql('method');
+		property.symbolname.should.be.eql('Platform_String_IsEmpty');
+		property.class.should.be.eql('Platform.String');
+		property.returnType.should.be.eql('bool');
+
+		done();
+	});
+
 	it("should record type of static property", function(done) {
 		var arch = 'x86',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
