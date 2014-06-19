@@ -18,7 +18,9 @@ std::wstring HyperloopWindowsGetWString(JSStringRef sValue) {
 
 std::wstring HyperloopWindowsGetWString(JSContextRef ctx, JSValueRef ref) {
 	JSStringRef sValue = JSValueToStringCopy(ctx, ref, NULL);
-	return HyperloopWindowsGetWString(sValue);
+	std::wstring str = HyperloopWindowsGetWString(sValue);
+	JSStringRelease(sValue);
+	return str;
 }
 
 std::string HyperloopWindowsGetSStr(Platform::String^ string) {
@@ -36,6 +38,7 @@ const char* HyperloopWindowsGetCStr(Platform::String^ string) {
 char* HyperloopWindowsGetCStr(JSContextRef ctx, JSValueRef ref) {
 	JSStringRef sValue = JSValueToStringCopy(ctx, ref, NULL);
 	std::wstring w_str = HyperloopWindowsGetWString(sValue);
+	JSStringRelease(sValue);
 	std::string s_str(w_str.begin(), w_str.end());
 	int length = sizeof(w_str);
 	char *c_str = new char[length];
@@ -66,8 +69,9 @@ Platform::String^ HyperloopWindowsGetPlatformString(JSContextRef ctx, JSStringRe
 Platform::String^ HyperloopWindowsGetPlatformString(JSContextRef ctx, JSValueRef ref) {
 	JSValueRef exception = NULL;
 	JSStringRef sValue = JSValueToStringCopy(ctx, ref, &exception);
-	CHECK_EXCEPTION_LOG_WINDOWS(ctx, exception);
-	return HyperloopWindowsGetPlatformString(sValue);
+	Platform::String^ str = HyperloopWindowsGetPlatformString(sValue);
+	JSStringRelease(sValue);
+	return str;
 }
 
 JSStringRef HyperloopWindowsGetJSStringRef(char *c_str, int length) {
