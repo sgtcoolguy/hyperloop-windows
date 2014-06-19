@@ -7,11 +7,6 @@
 
 #include <inspectable.h>
 
-#define CHECK_EXCEPTION_LOG_WINDOWS(ctx, exception)\
-if (exception != nullptr) {\
-	Logger::log(HyperloopWindowsGetPlatformString(ctx, exception));\
-}
-
 std::wstring HyperloopWindowsGetWString(JSStringRef sValue);
 std::wstring HyperloopWindowsGetWString(JSContextRef ctx, JSValueRef ref);
 std::string HyperloopWindowsGetSStr(Platform::String^ string);
