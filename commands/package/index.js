@@ -104,8 +104,7 @@ function generateCerts (options, proceed) {
 	pfxPath = path.join(appDir, name, name+'_Key.pfx');
 	var globalTestPfxPath = path.join(homeDir, 'DevelopmentKey.pfx');
 
-	// remove old/corrupt certs
-	if (fs.existsSync(pfxPath)) { fs.unlinkSync(pfxPath); }
+	// remove old certs
 	if (fs.existsSync(globalTestPfxPath)) { fs.unlinkSync(globalTestPfxPath); }
 
 	var count = 0;
