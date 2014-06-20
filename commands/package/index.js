@@ -100,16 +100,20 @@ function generateCerts (options, proceed) {
 	options.projectFile = projectFile;
 	options.appDir = appDir;
 
+	// get potential cert paths
+	pfxPath = path.join(appDir, name, name+'_Key.pfx');
+	var globalTestPfxPath = path.join(homeDir, 'DevelopmentKey.pfx');
+
+	// remove old/corrupt certs
+	if (fs.existsSync(pfxPath)) { fs.unlinkSync(pfxPath); }
+	if (fs.existsSync(globalTestPfxPath)) { fs.unlinkSync(globalTestPfxPath); }
+
 	var count = 0;
 	function initPfx() {
 		// if after 3 tries we can't create a valid cert, give up
 		if (count++ >= 3) {
 			log.fatal('Unable to create a valid test certificate.');
 		}
-
-		// get potential cert paths
-		pfxPath = path.join(appDir, name, name+'_Key.pfx');
-		var globalTestPfxPath = path.join(homeDir, 'DevelopmentKey.pfx');
 
 		// do we have a valid test cert in the build folder
 		if (fs.existsSync(pfxPath) && fs.statSync(pfxPath).size > 0) {
