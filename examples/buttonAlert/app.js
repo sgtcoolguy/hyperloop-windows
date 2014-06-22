@@ -27,12 +27,10 @@ button.VerticalAlignment = Windows.UI.Xaml.VerticalAlignment.Center;
 button.HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Center;
 grid.Children.Append(button);
 
-/* function callback is not working yet
-grid.add_Tapped(function() {
-	var dialog = new Windows.UI.Popups.MessageDialog("The Message", "The Title");
-		dialog.ShowAsync();
+grid.add_Tapped(function(sender,e) {
+	var dialog = Hyperloop.method('Windows.UI.Popups.MessageDialog','.ctor(string,string)').call("The Message", "The Title");
+	dialog.ShowAsync();
 });
-*/
 
 window.Content = grid;
 window.Activate();
