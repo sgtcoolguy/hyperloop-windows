@@ -57,7 +57,15 @@ inline double Hyperloop::NativeObject<Platform::String^>::toNumber(JSContextRef 
 		*exception = HyperloopMakeException(ctx, "Can't convert to number");
 		return NAN;
 	}
-	return _wtof(this->getObject()->Data());
+	try
+	{
+		return std::stod(this->getObject()->Data());
+	}
+	catch (std::invalid_argument)
+	{
+		*exception = HyperloopMakeException(ctx, "Can't convert to number");
+		return NAN;
+	}
 }
 
 template<>
