@@ -44,7 +44,7 @@ for (var i = 0; i < 3; i++) {
 		try {
 		var e = _e.cast('Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs'),
 			_source = e.OriginalSource,
-			source = source.cast('Windows.UI.Xaml.Controls.Canvas'), // TODO e.OriginalSource.cast('') doesn't work
+			source = _source.cast('Windows.UI.Xaml.Controls.Canvas'), // TODO e.OriginalSource.cast('') doesn't work
 			transformGroup = new Windows.UI.Xaml.Media.TransformGroup();
 
 		// Rotate.
