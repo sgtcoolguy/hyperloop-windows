@@ -40,9 +40,10 @@ for (var i = 0; i < 3; i++) {
 	Windows.UI.Xaml.Controls.Canvas.SetLeft(view, (random() * (canvas.Width - view.Width)) | 0);
 
 	view.ManipulationMode = Windows.UI.Xaml.Input.ManipulationModes.All;
-	view.add_ManipulationDelta(function(object, e) {
-		e = e.cast('Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs');
-		var source = e.OriginalSource,
+	view.add_ManipulationDelta(function(object, _e) {
+		try {
+		var e = _e.cast('Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs'),
+			source = e.OriginalSource,
 			transformGroup = new Windows.UI.Xaml.Media.TransformGroup();
 		source = source.cast('Windows.UI.Xaml.Controls.Canvas'); // TODO e.OriginalSource.cast('') doesn't work
 
@@ -58,12 +59,17 @@ for (var i = 0; i < 3; i++) {
 		translateTransform.Y = (translation.Y += e.Delta.Translation.Y);
 		transformGroup.Children.Append(translateTransform);
 
+		console.log(JSON.stringify(translation));
+
 		// Scale.
 		source.Width += e.Delta.Expansion;
 		source.Height += e.Delta.Expansion;
 
 		// Apply.
 		source.RenderTransform = transformGroup;
+		} catch (E) {
+			console.log(E);
+		}
 	});
 	view.Background = colors[['red', 'yellow', 'green'][i % 3]];
 	canvas.Children.Append(view);
