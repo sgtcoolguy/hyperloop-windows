@@ -64,12 +64,12 @@ function generateCerts (options, proceed) {
 
 	var name = options.name,
 		appDir = path.join(options.dest,'vsstudio',name),
-		pvkPath = path.join(appDir, name, options.name+'_Key.pvk'),
+		pvkPath = path.join(appDir, name, name+'.Shared', options.name+'_Key.pvk'),
 		pfxPath = options.pfx && path.join(appDir, name, options.pfx),
 		homeDir = util.writableHomeDirectory(),
 		cerFile = path.join(appDir, name, 'Test_Key.cer'),
 		solutionFile = path.join(appDir, name + '.sln'),
-		projectFile = path.join(appDir, name, name + '.vcxproj'),
+		projectFile = getAppProjectFile(options),
 		jscDir = path.join(homeDir, 'JavaScriptCore' + options.sdk),
 		srcDir = appc.fs.resolvePath(options.src);
 
@@ -191,6 +191,11 @@ function generateGuid(options) {
 	!hasGuid && fs.writeFileSync(options.guidPath, options.appguid, 'utf8');
 }
 
+function getAppProjectFile(options, target) {
+	var appDir = path.join(options.dest,'vsstudio',options.name);
+	return path.join(appDir, options.name, options.name+'.'+target, options.name +'.'+target+'.vcxproj');
+}
+
 function pkg(options, callback) {
 	var sdkConfig = sdkConfigs[options.sdk],
 		version = sdkConfig.version,
@@ -199,7 +204,8 @@ function pkg(options, callback) {
 		homeDir = util.writableHomeDirectory(),
 		jscLibDir = path.join(homeDir, 'JavaScriptCore'+options.sdk),
 		appDir = path.join(options.dest,'vsstudio',options.name),
-		projectFile = path.join(appDir, options.name, options.name + '.vcxproj');
+		projectFile_windows = getAppProjectFile(options,'Windows'),
+		projectFile_windowsphone = getAppProjectFile(options,'WindowsPhone');
 
 	log.debug('writing JavaScriptCore into', jscLibDir.cyan);
 
@@ -209,8 +215,13 @@ function pkg(options, callback) {
 			log.fatal(err);
 		}
 
-		log.debug('updating '+projectFile);
-		util.copyAndFilterString(projectFile, projectFile, {'\\$JAVASCRIPTCORE_LIB\\$':path.resolve(jscLibDir)});
+		log.debug('updating '+projectFile_windows);
+		util.copyAndFilterString(projectFile_windows, projectFile_windows,
+						{'\\$JAVASCRIPTCORE_LIB\\$':path.resolve(jscLibDir)});
+
+		log.debug('updating '+projectFile_windowsphone);
+		util.copyAndFilterString(projectFile_windowsphone, projectFile_windowsphone,
+						{'\\$JAVASCRIPTCORE_LIB\\$':path.resolve(jscLibDir)});
 
 		generateCerts(options, function(solutionFile){
 			generateGuid(options);
