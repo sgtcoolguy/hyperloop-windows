@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>01851063-9964-4952-816f-8e84800adbcd</SharedGUID>
+    <ItemsProjectGuid>{7e99f572-cb30-4836-ac87-dff04810ad67}</ItemsProjectGuid>
+    <ItemsRootNamespace>App</ItemsRootNamespace>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Main.cpp" />
+$APP_CLCOMPILES$
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)app.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Logger.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)hyperloop.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)JavaScriptCore\JSBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)JavaScriptCore\JSContextRef.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)JavaScriptCore\JSObjectRef.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)JavaScriptCore\JSStringRef.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)JavaScriptCore\JSValueRef.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)JavaScriptCore\WebKitAvailability.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+</Project>

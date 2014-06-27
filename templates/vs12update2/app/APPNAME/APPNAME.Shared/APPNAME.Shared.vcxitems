@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{b0022c12-a6f8-4fd8-94e9-5706155e9cef}</ItemsProjectGuid>
+    <ItemsRootNamespace>$APPNAME$</ItemsRootNamespace>
+    <ItemsProjectName>$APPNAME$.Shared</ItemsProjectName>
+    <CodeSharingProject>248F659F-DAC5-46E8-AC09-60EC9FC95053</CodeSharingProject>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)JavaScriptCore\JSBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)JavaScriptCore\JSContextRef.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)JavaScriptCore\JSObjectRef.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)JavaScriptCore\JSStringRef.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)JavaScriptCore\JSValueRef.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)JavaScriptCore\WebKitAvailability.h" />
+$APP_CLINCLUDES$
+  </ItemGroup>
+  <ItemGroup>
+$APP_CLCOMPILES$
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+</Project>
