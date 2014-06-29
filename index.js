@@ -4,7 +4,8 @@ module.exports = {
 		environment: 'dev',
 		appid: 'com.test.app',
 		certname: 'CN=Test',
-		publisher: 'Test'
+		publisher: 'Test',
+		target: 'Windows' // 'Windows' or 'WindowsPhone'
 	},
 	dirname: __dirname
 };
