@@ -5,8 +5,8 @@ var window = Windows.UI.Xaml.Window.Current,
 	button = new Windows.UI.Xaml.Controls.Button(),
 	cWhite  = Windows.UI.Colors.White,
 	cYellow = Windows.UI.Colors.Yellow,
-	white  = Hyperloop.method('Windows.UI.Xaml.Media.SolidColorBrush','.ctor(Windows.UI.Color)').call(cWhite),
-	yellow = Hyperloop.method('Windows.UI.Xaml.Media.SolidColorBrush','.ctor(Windows.UI.Color)').call(cYellow),
+	white  = new Windows.UI.Xaml.Media.SolidColorBrush(cWhite),
+	yellow = new Windows.UI.Xaml.Media.SolidColorBrush(cYellow),
 	text = new Windows.UI.Xaml.Controls.TextBlock();
 
 text.Text = "Click me, please!";
@@ -28,7 +28,7 @@ button.HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Center;
 grid.Children.Append(button);
 
 grid.add_Tapped(function(sender,e) {
-	var dialog = Hyperloop.method('Windows.UI.Popups.MessageDialog','.ctor(string,string)').call("The Message", "The Title");
+	var dialog = new Windows.UI.Popups.MessageDialog("The Message", "The Title");
 	dialog.ShowAsync();
 });
 
