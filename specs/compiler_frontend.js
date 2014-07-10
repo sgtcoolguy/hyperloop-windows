@@ -61,7 +61,7 @@ describe("Windows Compiler front-end", function() {
 		var arch = 'x86',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
-		source = '"use hyperloop"\nvar s = new Platform.String(\'hello\');\nvar str = s.ToString();';
+		source = '"use hyperloop"\nvar s = new Platform.String();\nvar str = s.ToString();';
 
 		should.exist(winMetabase);
 
@@ -99,7 +99,7 @@ describe("Windows Compiler front-end", function() {
 		var arch = 'x86',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
-		source = '"use hyperloop"\nvar s = new Platform.String(\'hello\');\nvar str = s.ToString();\ns=new Platform.Object();';
+		source = '"use hyperloop"\nvar s = new Platform.String();\nvar str = s.ToString();\ns=new Platform.Object();';
 
 		should.exist(winMetabase);
 
@@ -146,7 +146,7 @@ describe("Windows Compiler front-end", function() {
 		var arch = 'x86',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
-		source = '"use hyperloop"\nvar s = new Platform.String(\'hello\');\nvar str = s.ToString();\ns=new Platform.Object();\ns=new Platform.ValueType();';
+		source = '"use hyperloop"\nvar s = new Platform.String();\nvar str = s.ToString();\ns=new Platform.Object();\ns=new Platform.ValueType();';
 
 		should.exist(winMetabase);
 
@@ -201,7 +201,7 @@ describe("Windows Compiler front-end", function() {
 		var arch = 'x86',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
-		source = '"use hyperloop"\nvar t = new Platform.Type(0);\nvar name = t.FullName';
+		source = '"use hyperloop"\nvar t = Hyperloop.method(\'Platform.Type\', \'.ctor(object)\').call(0);\nvar name = t.FullName';
 
 		should.exist(winMetabase);
 
@@ -230,7 +230,7 @@ describe("Windows Compiler front-end", function() {
 		var arch = 'x86',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
-		source = '"use hyperloop"\nvar t = new Platform.Type(0);\nvar name = t.FullName\nvar e = name.IsEmpty();';
+		source = '"use hyperloop"\nvar t = Hyperloop.method(\'Platform.Type\', \'.ctor(object)\').call(0);\nvar name = t.FullName\nvar e = name.IsEmpty();';
 		should.exist(winMetabase);
 
 		state.metabase = winMetabase;
@@ -489,7 +489,7 @@ describe("Windows Compiler front-end", function() {
 		should.exist(method);
 		method.type.should.be.eql('constructor');
 		method.metatype.should.be.eql('constructor');
-		method.symbolname.should.be.eql('Platform_Metadata_DefaultMemberAttribute_constructor_string');
+		method.symbolname.should.be.eql('Platform_Metadata_DefaultMemberAttribute_.ctor_string');
 		method.returnType.should.be.eql('Platform.Metadata.DefaultMemberAttribute');
 		method.name.should.be.eql('.ctor');
 		method.class.should.be.eql('Platform.Metadata.DefaultMemberAttribute');
