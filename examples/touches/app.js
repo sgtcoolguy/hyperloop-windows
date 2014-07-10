@@ -13,10 +13,10 @@ var cRed = Windows.UI.Colors.Red,
 
 var canvas = new Windows.UI.Xaml.Controls.Canvas(),
 	colors = {
-		red: Hyperloop.method('Windows.UI.Xaml.Media.SolidColorBrush','.ctor(Windows.UI.Color)').call(cRed),
-		green: Hyperloop.method('Windows.UI.Xaml.Media.SolidColorBrush','.ctor(Windows.UI.Color)').call(cGreen),
-		blue: Hyperloop.method('Windows.UI.Xaml.Media.SolidColorBrush','.ctor(Windows.UI.Color)').call(cBlue),
-		yellow: Hyperloop.method('Windows.UI.Xaml.Media.SolidColorBrush','.ctor(Windows.UI.Color)').call(cYellow)
+		red: new Windows.UI.Xaml.Media.SolidColorBrush(cRed),
+		green: new Windows.UI.Xaml.Media.SolidColorBrush(cGreen),
+		blue: new Windows.UI.Xaml.Media.SolidColorBrush(cBlue),
+		yellow: new Windows.UI.Xaml.Media.SolidColorBrush(cYellow)
 	};
 
 canvas.Background = colors.blue;

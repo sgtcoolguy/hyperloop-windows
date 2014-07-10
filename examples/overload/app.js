@@ -13,7 +13,7 @@ text.FontSize = 60;
 
 Hyperloop.method(window, 'Equals(object)').call(text);
 Hyperloop.method('Platform.Object', 'ReferenceEquals(object,object)').call(window, text);
-var a = Hyperloop.method('Platform.Metadata.DefaultMemberAttribute','.ctor(string)').call('test');
+var a = new Platform.Metadata.DefaultMemberAttribute('test');
 
 window.Content = text;
 window.Activate();
