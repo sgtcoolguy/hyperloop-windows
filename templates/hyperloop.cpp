@@ -106,3 +106,15 @@ void HyperloopNativeLogger(const char *str)
     Logger::log(HyperloopWindowsGetPlatformString(str));
 }
 
+/*
+ * Tests whether a JavaScript value is an object constructed by given object, as compared by JS 'instanceof' operator
+ */
+EXPORTAPI JSValueRef Hyperloop_Binary_InstanceOf(JSContextRef ctx, JSObjectRef function, JSObjectRef thisObject, size_t argumentCount, const JSValueRef arguments[], JSValueRef* exception) {
+    if (argumentCount < 2)
+    {
+        *exception = HyperloopMakeException(ctx, "Wrong arguments passed to IsInstanceOf");
+        return JSValueMakeUndefined(ctx);
+    }
+
+    return JSValueMakeBoolean(ctx, false); // TODO
+}
