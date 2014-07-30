@@ -32,9 +32,9 @@ module.exports = new Command(
 				}
 			}
 			if (options.uninstall) {
-				// only run on windows
-				if (!/^win/.test(process.platform)) {
-					return done("`hyperloop clean --uninstall` only supported on Windows");
+				// only run on windows desktop
+				if (options.target != 'Windows') {
+					return done("`hyperloop clean --uninstall` only supported on Windows Desktop");
 				}
 				var programs = require('../../lib/programs');
 

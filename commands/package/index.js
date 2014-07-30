@@ -13,14 +13,21 @@ var	hyperloop = require('../../lib/dev').require('hyperloop-common'),
 	async = require('async'),
 	os = require('os'),
 	programs = require('../../lib/programs'),
+	library = require('../../lib/library'),
 	appc = require('node-appc'),
 	sdkConfigs = {
 		'8.1': {
-			version: '3',
-			checksum: 'ff61004236fc1141fdcf1a133c300f3deb70fdc1'
+			'x86' : {
+				version: '3',
+				checksum: 'ff61004236fc1141fdcf1a133c300f3deb70fdc1'
+			},
+			'arm' : {
+				version: '1',
+				checksum: '8f69ef56efb468de0a8cdf12da163b5fbaddf1b9'
+			}
 		}
 	},
-	urlFormat = 'http://timobile.appcelerator.com.s3.amazonaws.com/jscore/JavaScriptCore-windows-sdk%s-v%s.zip';
+	urlFormat = 'http://timobile.appcelerator.com.s3.amazonaws.com/jscore/JavaScriptCore-windows-sdk%s-%s-v%s.zip';
 
 module.exports = new Command(
 	'package',
@@ -197,19 +204,19 @@ function getAppProjectFile(options, target) {
 }
 
 function pkg(options, callback) {
-	var sdkConfig = sdkConfigs[options.sdk],
+	var sdkConfig = sdkConfigs[options.sdk][options.arch],
 		version = sdkConfig.version,
 		checksum = sdkConfig.checksum,
-		url = require('util').format(urlFormat, options.sdk, version),
+		url = require('util').format(urlFormat, options.sdk, options.arch, version),
 		homeDir = util.writableHomeDirectory(),
-		jscLibDir = path.join(homeDir, 'JavaScriptCore'+options.sdk),
+		jscLibDir = path.join(homeDir, 'JavaScriptCore'+options.sdk+'-'+options.arch),
 		appDir = path.join(options.dest,'vsstudio',options.name),
 		projectFile_windows = getAppProjectFile(options,'Windows'),
 		projectFile_windowsphone = getAppProjectFile(options,'WindowsPhone');
 
 	log.debug('writing JavaScriptCore into', jscLibDir.cyan);
 
-	util.downloadResourceIfNecessary('JavaScriptCore' + options.sdk, version, url, checksum, homeDir, function(err) {
+	util.downloadResourceIfNecessary('JavaScriptCore'+options.sdk+'-'+options.arch, version, url, checksum, homeDir, function(err) {
 		if (err) {
 			log.error('Downloading and extracting JavaScriptCore' + options.sdk + ' failed.');
 			log.fatal(err);
@@ -225,10 +232,8 @@ function pkg(options, callback) {
 
 		generateCerts(options, function(solutionFile){
 			generateGuid(options);
-			//TODO: hard coded to win32 for now
-			programs.msbuild(solutionFile+' /p:Platform=Win32', callback, options);
+			library.packageApp(options, solutionFile, callback);
 		});
-
 	});
 }
 
