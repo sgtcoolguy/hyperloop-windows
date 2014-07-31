@@ -21,14 +21,76 @@ module.exports = new Command(
 	],
 	function(state,done) {
 		var options = state.options;
-		if (options.arch == 'x86') {
-			return launchForDesktop(state, done);
+		if (options.target == 'Windows') {
+			return launchForWindows(state, done);
+		} else if (options.target == 'WindowsPhone' && options.arch == 'arm') {
+			log.fatal('launch for arm is not implemented yet');
+		} else if (options.target == 'WindowsPhone' && options.arch == 'x86') {
+			return launchForWindowsPhoneEmu(state, done);
 		} else {
-			log.fatal('Not implemented yet');
+			log.fatal('Not implemented for '+options.target+'-'+optioins.arch);
 		}
 	}
 );
-function launchForDesktop(state,done) {
+
+function getAppGUID(options) {
+	var file = path.join(options.dest,'vsstudio',options.name,'guid');
+	options.guidPath = file;
+	if (fs.existsSync(file)) {
+		return fs.readFileSync(file, 'utf8');
+	}
+	return undefined;
+}
+
+function launchForWindowsPhoneEmu(state,done) {
+	try {
+		var options = state.options,
+			name = options.name;
+		options.appDir = path.join(options.dest,'vsstudio',name);
+
+		var appPackages = path.join(options.appDir, 'AppPackages'),
+			appguid = getAppGUID(options);
+
+		findAppX();
+
+		function findAppX() {
+			log.info('Compilation finished!');
+
+			var files = wrench.readdirSyncRecursive(appPackages).filter(function(f) {
+				return f.match(/Debug\.appx$/);
+			});
+			if (!files || !files.length) {
+				log.fatal('Could not find a generated Debug.AppX for your app.');
+			}
+			else {
+				installAppX(path.join(appPackages, files[0]));
+			}
+		}
+
+		function installAppX(at) {
+			var fullat = path.resolve(at);
+			programs.appdeploycmd(['/uninstall '+appguid+' /targetdevice:xd'], function(err) {
+				programs.appdeploycmd(['/install \"'+fullat+'\" /targetdevice:xd'], function(err) {
+					if (err) {
+						log.error('Failed to install app.');
+						log.fatal(err);
+					}
+					programs.appdeploycmd(['/launch '+appguid+' /targetdevice:xd'], function(err) {
+						if (err) {
+							log.error('Failed to launch app.');
+							log.fatal(err);
+						}
+
+					});
+				});
+			});
+		}
+	} catch (E) {
+		done(E);
+	}
+}
+
+function launchForWindows(state,done) {
 	try {
 		var options = state.options,
 			name = options.name;
@@ -36,16 +98,12 @@ function launchForDesktop(state,done) {
 		options.appDir = path.join(options.dest,'vsstudio',name);
 
 		(function uninstallApp() {
-			if (fs.existsSync(options.guidPath)) {
-				var guid = fs.readFileSync(options.guidPath,'utf8'),
-					identityName = options['identity-name'] || 'hyperlooptest.' + options.name,
+			var guid = getAppGUID(options);
+			if (guid) {
+				var identityName = options['identity-name'] || 'hyperlooptest.' + options.name,
 					cmd = '"get-appxpackage \'' + identityName + '*\' | remove-appxpackage"';
 
 				programs.powershell(cmd, function(err) {
-					if (err) {
-						log.error('Failed to install the app.');
-						log.fatal(err);
-					}
 					return findPackagePs1();
 				});
 			} else {
