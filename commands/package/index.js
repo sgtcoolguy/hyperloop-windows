@@ -80,21 +80,10 @@ function generateCerts (options, proceed) {
 		jscDir = path.join(homeDir, 'JavaScriptCore' + options.sdk),
 		srcDir = appc.fs.resolvePath(options.src);
 
-	var values = {
-			APPNAME: name,
-			APPGUID: options.appguid,
-			LIBDIR: path.resolve(path.join(jscDir)).replace('/', '\\'),
-			INCLUDEDIR: path.resolve(path.join(jscDir, 'include')).replace('/', '\\'),
-			CERTNAME: options.certname,
-			PFX: options.pfx,
-			PUBLISHERNAME: options.publisher
-		},
 		configFile = path.join(appDir,'..','config.json'),
 		config = fs.existsSync(configFile) ? JSON.parse(fs.readFileSync(configFile, 'utf8')) : {},
 		packageJSONPath = path.join(srcDir, 'package.json'),
 		packageJSON = !fs.existsSync(packageJSONPath) ? {} : JSON.parse(fs.readFileSync(packageJSONPath, 'utf8'));
-
-	values.IDENTITY_NAME = options['identity-name'] || 'hyperlooptest.' + name;
 
 	// Copy the current build's options in to the config.
 	config.options = options;
@@ -203,6 +192,11 @@ function getAppProjectFile(options, target) {
 	return path.join(appDir, options.name, options.name+'.'+target, options.name +'.'+target+'.vcxproj');
 }
 
+function getAppManifestFile(options, target) {
+	var appDir = path.join(options.dest,'vsstudio',options.name);
+	return path.join(appDir, options.name, options.name+'.'+target, 'Package.appxmanifest');
+}
+
 function pkg(options, callback) {
 	var sdkConfig = sdkConfigs[options.sdk][options.arch],
 		version = sdkConfig.version,
@@ -222,6 +216,8 @@ function pkg(options, callback) {
 			log.fatal(err);
 		}
 
+		generateGuid(options);
+
 		log.debug('updating '+projectFile_windows);
 		util.copyAndFilterString(projectFile_windows, projectFile_windows,
 						{'\\$JAVASCRIPTCORE_LIB\\$':path.resolve(jscLibDir)});
@@ -230,8 +226,12 @@ function pkg(options, callback) {
 		util.copyAndFilterString(projectFile_windowsphone, projectFile_windowsphone,
 						{'\\$JAVASCRIPTCORE_LIB\\$':path.resolve(jscLibDir)});
 
+		var manifest_windows = getAppManifestFile(options, 'Windows');
+		var manifest_windowsphone = getAppManifestFile(options, 'WindowsPhone');
+		util.copyAndFilterString(manifest_windows, manifest_windows, {'\\$APPGUID\\$': options.appguid});
+		util.copyAndFilterString(manifest_windowsphone, manifest_windowsphone, {'\\$APPGUID\\$': options.appguid});
+
 		generateCerts(options, function(solutionFile){
-			generateGuid(options);
 			library.packageApp(options, solutionFile, callback);
 		});
 	});
