@@ -96,6 +96,10 @@ function generateCerts (options, proceed) {
 	options.projectFile = projectFile;
 	options.appDir = appDir;
 
+	if (options.target == 'WindowsPhone') {
+		return proceed(solutionFile);
+	}
+
 	// get potential cert paths
 	pfxPath = path.join(appDir, name, name+'_Key.pfx');
 	var globalTestPfxPath = path.join(homeDir, 'DevelopmentKey.pfx');
