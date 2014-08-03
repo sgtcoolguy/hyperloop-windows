@@ -55,7 +55,7 @@ function launchForWindowsPhone(state,done) {
 
 		function findAppX() {
 			var files = wrench.readdirSyncRecursive(appPackages).filter(function(f) {
-				return f.match(/Debug\.appx$/);
+				return f.match(/Debug\.appx$|Debug\.appxbundle$/);
 			});
 			if (!files || !files.length) {
 				log.fatal('Could not find a generated Debug.AppX for your app.');
