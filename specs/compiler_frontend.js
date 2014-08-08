@@ -489,7 +489,7 @@ describe("Windows Compiler front-end", function() {
 		should.exist(method);
 		method.type.should.be.eql('constructor');
 		method.metatype.should.be.eql('constructor');
-		method.symbolname.should.be.eql('Platform_Metadata_DefaultMemberAttribute_.ctor_string');
+		method.symbolname.should.be.eql('Platform_Metadata_DefaultMemberAttribute_constructor_string');
 		method.returnType.should.be.eql('Platform.Metadata.DefaultMemberAttribute');
 		method.name.should.be.eql('.ctor');
 		method.class.should.be.eql('Platform.Metadata.DefaultMemberAttribute');
