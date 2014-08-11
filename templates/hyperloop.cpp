@@ -106,6 +106,10 @@ void HyperloopNativeLogger(const char *str)
     Logger::log(HyperloopWindowsGetPlatformString(str));
 }
 
+void HyperloopWindowsPlatformLogger(Platform::String^ str) {
+    Logger::log(str);
+}
+
 /*
  * Tests whether a JavaScript value is an object constructed by given object, as compared by JS 'instanceof' operator
  */
