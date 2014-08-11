@@ -19,6 +19,7 @@ Platform::String^ HyperloopWindowsGetPlatformString(JSContextRef ctx, JSValueRef
 JSStringRef HyperloopWindowsGetJSStringRef(char *c_str, int length);
 JSStringRef HyperloopWindowsGetJSStringRef(Platform::String^ string);
 JSValueRef HyperloopWindowsGetJSValueRef(JSContextRef ctx, Platform::String^ string);
+void HyperloopWindowsPlatformLogger(Platform::String^ o);
 
 // Platform::String^ specialization
 
