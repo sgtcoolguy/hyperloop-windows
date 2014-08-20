@@ -51,6 +51,10 @@ function launchForWindowsPhone(state,done) {
 		var appPackages = path.join(options.appDir, options.name, options.name+'.'+options.target, 'AppPackages'),
 			appguid = getAppGUID(options);
 
+		if (!fs.exists(appPackages)) {
+			wrench.mkdirSyncRecursive(appPackages);
+		}
+
 		findAppX();
 
 		function findAppX() {
@@ -201,7 +205,8 @@ function launchForWindows(state,done) {
 		}
 
 		function findAppX() {
-			var files = wrench.readdirSyncRecursive(appPackages).filter(function(f) {
+			var appPackages = path.join(options.appDir, options.name, options.name+'.'+options.target, 'AppPackages'),
+			    files = wrench.readdirSyncRecursive(appPackages).filter(function(f) {
 				return f.match(/Debug\.appx$/);
 			});
 			if (!files || !files.length) {

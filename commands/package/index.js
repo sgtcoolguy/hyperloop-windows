@@ -220,6 +220,10 @@ function pkg(options, callback) {
 			log.fatal(err);
 		}
 
+		if (!fs.exists(appDir)) {
+			wrench.mkdirSyncRecursive(appDir);
+		}
+
 		generateGuid(options);
 
 		log.debug('updating '+projectFile_windows);
